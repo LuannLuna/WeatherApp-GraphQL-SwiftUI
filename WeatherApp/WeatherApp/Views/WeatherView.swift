@@ -1,7 +1,9 @@
 import SwiftUI 
 
 struct WeatherView: View {
-    
+
+    let vm: WeatherInfoViewModel
+
     var body: some View {
         VStack {
             
@@ -9,29 +11,29 @@ struct WeatherView: View {
                 
                 VStack(alignment: .leading) {
                     
-                    Image(systemName: "sun")
+                    Image(systemName: vm.icon ?? "")
                         .font(.largeTitle)
                         .foregroundColor(.white)
                         .padding(.bottom, 20)
                     
-                    Text("title")
+                    Text(vm.summaryTitle ?? "")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                     
-                    Text("description")
+                    Text(vm.summaryDescription ?? "")
                         .font(.body)
                         .foregroundColor(.white)
                 }
                 
                 Spacer()
                 VStack {
-                    Text("temperature")
+                    Text(vm.temperature?.formatAsTemperature() ?? "")
                         .font(.system(size: 60))
                         .foregroundColor(.white)
                     
                     
-                    Text("Feels like")
+                    Text(vm.feelsLike?.formatAsTemperature() ?? "")
                         .font(.caption)
                         .foregroundColor(.white)
                 }

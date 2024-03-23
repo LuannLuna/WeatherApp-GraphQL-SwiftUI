@@ -10,13 +10,29 @@ enum LoadingStatus {
 class WeatherViewModel: ObservableObject {
     var city = ""
     var weatherInfo: WeatherInfoViewModel?
-    let weatherIcons = ["03d": "cloud", "04d": "smoke"]
 
     @Published var loadingStatus: LoadingStatus = .none
 
-    private
-    func getSystemIcon(icon: String?) -> String? {
-        guard let icon else { return "exclamationmark" }
-        return weatherIcons[icon] ?? weatherIcons["03d"]
+    func fetchWeatherByCityName() {
+        Network.shared.apollo.fetch(query: GetWeatherByCityNameQuery(city: city)) { [weak self] result in
+            switch result {
+                case let .success(graphqlResult):
+                    if let getCityByName = graphqlResult.data?.getCityByName {
+                        self?.weatherInfo = .init(city: getCityByName)
+                        DispatchQueue.main.async { [weak self] in
+                            self?.loadingStatus = .success
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            self?.loadingStatus = .notFound
+                        }
+                    }
+                case let .failure(error):
+                    print(error.localizedDescription)
+                    DispatchQueue.main.async {
+                        self?.loadingStatus = .failure
+                    }
+            }
+        }
     }
 }
