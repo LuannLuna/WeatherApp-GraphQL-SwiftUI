@@ -1,0 +1,19 @@
+
+query GetWeatherByCityName {
+  getCityByName(name: "Houston") {
+    name
+    country
+    weather {
+        summary {
+            title
+            description
+            icon
+        }
+        clouds {
+            all
+            visibility
+            humidity
+        }
+    }
+  }
+}
