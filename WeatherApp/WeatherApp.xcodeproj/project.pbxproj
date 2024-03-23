@@ -24,6 +24,7 @@
 		8DC92D37264AF29700C611C3 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC92D36264AF29700C611C3 /* Double+Extensions.swift */; };
 		8DC92D3B264B03D300C611C3 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC92D3A264B03D300C611C3 /* WeatherView.swift */; };
 		8DC92D3E264B043700C611C3 /* InvalidCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC92D3D264B043700C611C3 /* InvalidCityView.swift */; };
+		A42E23EB2BAF1C79000309BC /* WeatherInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E23EA2BAF1C79000309BC /* WeatherInfoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		8DC92D36264AF29700C611C3 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		8DC92D3A264B03D300C611C3 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		8DC92D3D264B043700C611C3 /* InvalidCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidCityView.swift; sourceTree = "<group>"; };
+		A42E23EA2BAF1C79000309BC /* WeatherInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC92D33264AE0E400C611C3 /* WeatherViewModel.swift */,
+				A42E23EA2BAF1C79000309BC /* WeatherInfoViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				8DC92D34264AE0E400C611C3 /* WeatherViewModel.swift in Sources */,
 				8DC92D37264AF29700C611C3 /* Double+Extensions.swift in Sources */,
 				8DC92D22264AD7D900C611C3 /* Apollo.swift in Sources */,
+				A42E23EB2BAF1C79000309BC /* WeatherInfoViewModel.swift in Sources */,
 				8DC92D29264AD97900C611C3 /* API.swift in Sources */,
 				8DC92D30264ADEEC00C611C3 /* View+Extensions.swift in Sources */,
 				8DC92D02264AD3AF00C611C3 /* WeatherAppApp.swift in Sources */,
